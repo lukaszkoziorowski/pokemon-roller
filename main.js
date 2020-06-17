@@ -35,10 +35,10 @@ function render() {
     document.querySelector(".roller__btn").disabled = true;
     document.querySelector(".roller__btn").style.opacity = "0.7";
   }
-  // if (pokemons.length != 9) {
-  //   document.querySelector(".roller__btn").disabled = false;
-  //   document.querySelector(".roller__btn").style.opacity = "1";
-  // }
+  document
+    .querySelector(".footer__backpack")
+    .addEventListener("click", showBackpack);
+  document.querySelector(".footer__backpack").style.opacity = "1";
 }
 
 const addNumberBackpack = (poke) => {
@@ -48,6 +48,7 @@ const addNumberBackpack = (poke) => {
   pokemons.push(singlePoke);
   amount = pokemons.length;
   backpack.textContent = amount;
+  showBackpack();
   if (pokemons.length == 9) {
     const warning = document.createElement("span");
     warning.className = "footer__warning";
@@ -58,6 +59,10 @@ const addNumberBackpack = (poke) => {
 };
 
 const showPoke = (poke) => {
+  document
+    .querySelector(".footer__backpack")
+    .removeEventListener("click", showBackpack);
+  document.querySelector(".footer__backpack").style.opacity = "0.7";
   const submitBtn = document.querySelector(".roller-btn");
 
   const pokeball = document.querySelector(".roller__pokeball-img");
