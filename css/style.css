@@ -1,0 +1,512 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
+@-webkit-keyframes add {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes add {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    top: 112vh;
+  }
+  100% {
+    top: 12vh;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    top: 112vh;
+  }
+  100% {
+    top: 12vh;
+  }
+}
+
+@-webkit-keyframes slideOut {
+  0% {
+    top: 12vh;
+  }
+  100% {
+    top: 112vh;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: 12vh;
+  }
+  100% {
+    top: 112vh;
+  }
+}
+
+@-webkit-keyframes slideInDesktop {
+  0% {
+    top: 140vh;
+  }
+  100% {
+    top: 40vh;
+  }
+}
+
+@keyframes slideInDesktop {
+  0% {
+    top: 140vh;
+  }
+  100% {
+    top: 40vh;
+  }
+}
+
+@-webkit-keyframes slideOutDesktop {
+  0% {
+    top: 40vh;
+  }
+  100% {
+    top: 140vh;
+  }
+}
+
+@keyframes slideOutDesktop {
+  0% {
+    top: 40vh;
+  }
+  100% {
+    top: 140vh;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 12%;
+  width: 100%;
+  background-color: #e83e35;
+  color: white;
+  text-align: center;
+}
+
+.menu__site-title {
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.animated {
+  -webkit-animation: spin 3s alternate both;
+          animation: spin 3s alternate both;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  background-color: #e83e35;
+  color: white;
+  padding: 10px 32px;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.43);
+          box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.43);
+}
+
+.btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.43);
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.43);
+}
+
+.btn__disabled {
+  opacity: 0.7;
+}
+
+.roller {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70%;
+}
+
+.roller__pokeball-img {
+  height: 45vh;
+  width: 45vh;
+  z-index: 200;
+}
+
+.roller__new-pokemon {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -100;
+}
+
+.generator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-wrapper__btn-again, .btn-wrapper__btn-backpack {
+  font-size: 26px;
+  width: 50%;
+  padding: 5px 10px;
+}
+
+@media (min-width: 639px) {
+  .btn-wrapper__btn-again, .btn-wrapper__btn-backpack {
+    font-size: 25px;
+    padding: 0px 5px;
+    width: 40%;
+  }
+}
+
+.btn-wrapper__btn-backpack {
+  background-color: white;
+  color: #e83e35;
+  border: 2px solid #e83e35;
+}
+
+.footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 18%;
+  width: 100%;
+}
+
+.footer__backpack {
+  position: relative;
+  height: 60px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.footer__backpack-img {
+  height: 60px;
+  width: 60px;
+}
+
+.footer__backpack-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: -5px;
+  top: -15px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #e83e35;
+  color: white;
+  font-size: 20px;
+}
+
+.footer__warning {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.modal {
+  text-align: center;
+  -webkit-animation: 1s slideIn;
+          animation: 1s slideIn;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  top: 12vh;
+  left: 0;
+  width: 100vw;
+  height: 88vh;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.54);
+          box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.54);
+  overflow: scroll;
+}
+
+.modal__backpack-title {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-top: 5px;
+}
+
+.modal__single-pokemon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 23%;
+      flex-basis: 23%;
+}
+
+.modal__poke-img {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.modal__delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal__poke-name {
+  font-size: 20px;
+}
+
+.modal__close-btn {
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 32px;
+  width: 100%;
+  height: 80px;
+  background-color: #e83e35;
+  color: white;
+  font-size: "Poppins", sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 766px) {
+  .menu__site-title {
+    font-size: 48px;
+  }
+  .generator {
+    margin-top: 80px;
+  }
+  .roller__btn {
+    font-size: 46px;
+    padding: 20px 60px;
+  }
+  .roller__poke-img {
+    height: 200px;
+    width: 200px;
+  }
+  .roller__poke-name {
+    font-size: 40px;
+  }
+  .btn-wrapper__btn-again, .btn-wrapper__btn-backpack {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    font-size: 46px;
+    padding: 0 10px;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer__backpack {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .footer__backpack-img {
+    height: 100%;
+    width: 100%;
+  }
+  .footer__backpack-amount {
+    height: 42px;
+    width: 42px;
+    font-size: 32px;
+    right: -17px;
+    top: -20px;
+  }
+  .footer__warning {
+    font-size: 40px;
+  }
+  .modal__backpack-title {
+    font-size: 45px;
+  }
+  .modal__poke-name {
+    font-size: 30px;
+  }
+  .modal__poke-img {
+    height: 200px;
+    width: 200px;
+  }
+  .modal__close-btn {
+    height: 100px;
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__site-title {
+    font-size: 52px;
+  }
+  .roller__pokeball-img {
+    margin-top: 40px;
+  }
+  .modal {
+    -webkit-animation: 1s slideInDesktop;
+            animation: 1s slideInDesktop;
+    top: 40vh;
+    left: auto;
+    right: 0.2vw;
+    width: 33vw;
+    height: 60vh;
+  }
+  .modal__backpack-title {
+    font-size: 35px;
+  }
+  .modal__poke-name {
+    font-size: 24px;
+  }
+  .modal__poke-img {
+    height: 120px;
+    width: 120px;
+  }
+  .modal__close-btn {
+    height: 80px;
+    font-size: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

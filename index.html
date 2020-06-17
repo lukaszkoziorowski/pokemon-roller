@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Roller</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="menu">
+      <h1 class="menu__site-title">Pokemon Roller</h1>
+    </nav>
+    <main class="roller">
+      <section class="roller__pokemon">
+        <img
+          src="assets/Pokeball.png"
+          alt="Pokeball"
+          class="roller__pokeball-img"
+        />
+        <form class="generator">
+          <input type="submit" id="submit-input"  class="btn roller__btn" value="Roll"></input>
+        </form>
+        <!-- <div class="roller__pokemon-place"></div> -->
+      </section>
+      
+    </main>
+    <footer class="footer">
+      <div class="footer__backpack">
+        <img
+          src="assets/backpack.svg"
+          alt="Backpack icon"
+          class="footer__backpack-img"
+        />
+        <span class="footer__backpack-amount">0</span>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
